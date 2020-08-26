@@ -153,43 +153,30 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-xo-GitHub搭建属于自己的博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Hexo-GitHub搭建属于自己的博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/26/xo-GitHub%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/">Hexo+GitHub搭建属于自己的博客（一）</a>
+      <a class="article-title" href="/2020/08/26/Hexo-GitHub%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/">Hexo+GitHub搭建属于自己的博客</a>
     </h1>
   
 
         
-        <a href="/2020/08/26/xo-GitHub%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2020-08-26T09:45:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-26</time>
+        <a href="/2020/08/26/Hexo-GitHub%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
+  	<time datetime="2020-08-26T13:55:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="#前言"></a>#前言</h1><pre><code># 使用Hexo搭建博客平台有什么好处呢？
-    搭建博客是免费的，不需要使用服务器，不需要后台。
-    可自定义自己的页面，当然了hexo也有丰富的主题可以使用，会在后续介绍
-    可以方便打包、转移、发布到其他的平台，例如：码云，coding、GitHub；这里我使用的是GitHub，其他平台请自行查找。</code></pre>
-<h1 id="搭建一个本地博客"><a href="#搭建一个本地博客" class="headerlink" title="#搭建一个本地博客"></a>#搭建一个本地博客</h1> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">首先，我们先安装nodejs(https://nodejs.org/en/)(版本号：12.18.3 LTS)</span><br><span class="line">这个安装包会帮我们安装两个组件，一个就是我们的nodejs</span><br><span class="line">还有一个就是npm，这两个待会我们都会用到</span><br><span class="line">安装好后我们检查一下我们的nodejs和npm是否安装成功以及查看版本号</span><br><span class="line">Win键+R，输入CMD打开我们的命令行界面，输入node -v 、npm -v </span><br></pre></td></tr></table></figure>
-<p><img src="/images/pasted-1.png" alt="upload successful"><br><img src="/images/pasted-3.png" alt="upload successful"></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">我们设置一下npm的镜像源这样提高我们利用npm下载的速度，</span><br><span class="line">命令：npm install -g cnpm --registry=http://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">安装好后，我们在电脑的任意位置创建一个文件夹</span><br><span class="line">这个文件夹之后会用来储存我们博客的一些配置文件、数据，所以位置要记住</span><br><span class="line">然后文件夹的名字最好是见明知意，方便查找</span><br><span class="line">我这边已经创建好了我的路径名称是 \hexo\blog</span><br></pre></td></tr></table></figure>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">在我们的blog文件夹中安装我们的hexo</span><br><span class="line">命令：npm install -g hexo</span><br><span class="line">安装好后检查一下是否安装成功：hexo -v</span><br><span class="line">结果如下：</span><br></pre></td></tr></table></figure>
-<p> <img src="/images/pasted-4.png" alt="upload successful"></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">安装好hexo后你就离成功只有一步之遥了！是不是有点小激动</span><br><span class="line">安装好后我们在blog的文件夹中使用命令行输入：hexo init </span><br><span class="line">初始化我们的博客，你就会发现你的blog文件夹中多出了这些东西</span><br><span class="line">因为我加了一些东西进去但是大同小异</span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/pasted-5.png" alt="upload successful"></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">初始化完成后，我们在blog文件夹下使用命令行输入:</span><br><span class="line">hexo g  <span class="comment">#生成</span></span><br><span class="line">hexo s  <span class="comment">#启动服务</span></span><br><span class="line">这个时候你就可以使用浏览器进入 http://localhost:4000 </span><br><span class="line">这时候你的本地博客就做好了！当然了我这个样式是加了主题的，这个后续再说</span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/pasted-6.png" alt="upload successful"></p>
-
+        <p>#前言</p>
+        
+          <a class="article-more-a" href="/2020/08/26/Hexo-GitHub%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/#more">more >></a>
+        
       
 
       
@@ -201,7 +188,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/26/xo-GitHub%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/08/26/Hexo-GitHub%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
         </p>
       
 
@@ -231,40 +218,30 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-xo-GitHub搭建属于自己的博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/24/hello-world/">Hello World</a>
+      <a class="article-title" href="/2020/08/26/xo-GitHub%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/">Hexo+GitHub搭建属于自己的博客（一）</a>
     </h1>
   
 
         
-        <a href="/2020/08/24/hello-world/" class="archive-article-date">
-  	<time datetime="2020-08-24T09:43:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-24</time>
+        <a href="/2020/08/26/xo-GitHub%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
+  	<time datetime="2020-08-26T09:45:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
+        <h1 id="简介"><a href="#简介" class="headerlink" title="#简介"></a>#简介</h1><p>使用Hexo搭建博客平台有什么好处呢？<br>    1.搭建博客是免费的，不需要使用服务器，不需要后台。<br>    2.可自定义自己的页面，当然了hexo也有丰富的主题可以使用，会在后续介绍<br>    3.可以方便打包、转移、发布到其他的平台，例如：码云，coding、GitHub；这里我使用的是GitHub，其他平台请自行查找。<br>
+        
+          <a class="article-more-a" href="/2020/08/26/xo-GitHub%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/#more">more >></a>
+        
       
 
       
@@ -273,10 +250,21 @@
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Hexo//" class="article-tag-list-link color5">Hexo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/24/hello-world/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/08/26/xo-GitHub%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
         </p>
       
 
