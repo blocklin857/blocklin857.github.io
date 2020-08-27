@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Hexo+GitHub搭建属于自己的博客（一） | 焦头烂鹅</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="#简介使用Hexo搭建博客平台有什么好处呢？    1.搭建博客是免费的，不需要使用服务器，不需要后台。    2.可自定义自己的页面，当然了hexo也有丰富的主题可以使用，会在后续介绍    3.可以方便打包、转移、发布到其他的平台，例如：码云，coding、GitHub；这里我使用的是GitHub，其他平台请自行查找。">
+  <meta name="description" content="简介使用Hexo搭建博客平台有什么好处呢？    1.搭建博客是免费的，不需要使用服务器，不需要后台。    2.可自定义自己的页面，当然了hexo也有丰富的主题可以使用，会在后续介绍    3.可以方便打包、转移、发布到其他的平台，例如：码云，coding、GitHub；这里我使用的是GitHub，其他平台请自行查找。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo+GitHub搭建属于自己的博客（一）">
 <meta property="og:url" content="http://yoursite.com/2020/08/26/xo-GitHub%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/index.html">
 <meta property="og:site_name" content="焦头烂鹅">
-<meta property="og:description" content="#简介使用Hexo搭建博客平台有什么好处呢？    1.搭建博客是免费的，不需要使用服务器，不需要后台。    2.可自定义自己的页面，当然了hexo也有丰富的主题可以使用，会在后续介绍    3.可以方便打包、转移、发布到其他的平台，例如：码云，coding、GitHub；这里我使用的是GitHub，其他平台请自行查找。">
+<meta property="og:description" content="简介使用Hexo搭建博客平台有什么好处呢？    1.搭建博客是免费的，不需要使用服务器，不需要后台。    2.可自定义自己的页面，当然了hexo也有丰富的主题可以使用，会在后续介绍    3.可以方便打包、转移、发布到其他的平台，例如：码云，coding、GitHub；这里我使用的是GitHub，其他平台请自行查找。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/pasted-1.png">
 <meta property="og:image" content="http://yoursite.com/images/pasted-3.png">
@@ -21,7 +21,7 @@
 <meta property="og:image" content="http://yoursite.com/images/pasted-5.png">
 <meta property="og:image" content="http://yoursite.com/images/pasted-6.png">
 <meta property="article:published_time" content="2020-08-26T09:45:00.000Z">
-<meta property="article:modified_time" content="2020-08-26T14:08:31.589Z">
+<meta property="article:modified_time" content="2020-08-27T08:48:21.966Z">
 <meta property="article:author" content="焦头烂鹅">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
@@ -181,7 +181,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="简介"><a href="#简介" class="headerlink" title="#简介"></a>#简介</h1><p>使用Hexo搭建博客平台有什么好处呢？<br>    1.搭建博客是免费的，不需要使用服务器，不需要后台。<br>    2.可自定义自己的页面，当然了hexo也有丰富的主题可以使用，会在后续介绍<br>    3.可以方便打包、转移、发布到其他的平台，例如：码云，coding、GitHub；这里我使用的是GitHub，其他平台请自行查找。<br> <a id="more"></a></p>
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>使用Hexo搭建博客平台有什么好处呢？<br>    1.搭建博客是免费的，不需要使用服务器，不需要后台。<br>    2.可自定义自己的页面，当然了hexo也有丰富的主题可以使用，会在后续介绍<br>    3.可以方便打包、转移、发布到其他的平台，例如：码云，coding、GitHub；这里我使用的是GitHub，其他平台请自行查找。<br> <a id="more"></a></p>
 <h1 id="搭建一个本地博客"><a href="#搭建一个本地博客" class="headerlink" title="#搭建一个本地博客"></a>#搭建一个本地博客</h1><p>  首先，我们先安装<a href="%E7%BD%91%E5%9D%80%EF%BC%9Ahttps://nodejs.org/en/">nodejs</a>(版本号：12.18.3 LTS)<br>  这个安装包会帮我们安装两个组件，一个就是我们的nodejs<br>  还有一个就是npm，这两个待会我们都会用到<br>  安装好后我们检查一下我们的nodejs和npm是否安装成功以及查看版本号<br>  Win键+R，输入CMD打开我们的命令行界面，输入<br>  <code>  node -v  #node版本号  </code><br>  <code>  npm -v  #npm版本号  </code></p>
 <p><img src="/images/pasted-1.png" alt="upload successful"><br><img src="/images/pasted-3.png" alt="upload successful"></p>
 <p> 我们设置一下npm的镜像源这样提高我们利用npm下载的速度，<br> 命令：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry&#x3D;http:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure></p>
