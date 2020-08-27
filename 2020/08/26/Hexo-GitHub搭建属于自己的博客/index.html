@@ -6,20 +6,36 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo+GitHub搭建属于自己的博客 | 焦头烂鹅</title>
+  <title>Hexo+GitHub搭建属于自己的博客（二） | 焦头烂鹅</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="#前言">
+  <meta name="description" content="简介之前我们已经搭建了我们的博客，但是那只能在本地查看，接下来我们将要做的就是将他部署到GitHub平台上（其他平台请自行查阅，都是大同小异），这样子别人通过访问我们的域名即可看到我们的博客了">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo+GitHub搭建属于自己的博客">
+<meta property="og:title" content="Hexo+GitHub搭建属于自己的博客（二）">
 <meta property="og:url" content="http://yoursite.com/2020/08/26/Hexo-GitHub%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/index.html">
 <meta property="og:site_name" content="焦头烂鹅">
-<meta property="og:description" content="#前言">
+<meta property="og:description" content="简介之前我们已经搭建了我们的博客，但是那只能在本地查看，接下来我们将要做的就是将他部署到GitHub平台上（其他平台请自行查阅，都是大同小异），这样子别人通过访问我们的域名即可看到我们的博客了">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/images/pasted-7.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-19.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-20.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-21.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-22.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-9.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-11.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-12.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-13.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-14.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-15.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-16.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-18.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-23.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-24.png">
 <meta property="article:published_time" content="2020-08-26T13:55:17.000Z">
-<meta property="article:modified_time" content="2020-08-26T14:02:52.627Z">
+<meta property="article:modified_time" content="2020-08-27T08:46:27.899Z">
 <meta property="article:author" content="焦头烂鹅">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-7.png">
   
     <link rel="alternative" href="/atom.xml" title="焦头烂鹅" type="application/atom+xml">
   
@@ -162,7 +178,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hexo+GitHub搭建属于自己的博客
+      Hexo+GitHub搭建属于自己的博客（二）
     </h1>
   
 
@@ -175,9 +191,38 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#前言</p>
-<a id="more"></a>
-<pre><code>之前我们已经搭建了我们的博客，但是那只能在本地查看，接下来我们将要做的就是将他部署到GitHub平台上（其他平台请自行查阅，都是大同小异），这样子别人通过访问我们的域名即可看到我们的博客了</code></pre>
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>之前我们已经搭建了我们的博客，但是那只能在本地查看，接下来我们将要做的就是将他部署到GitHub平台上（其他平台请自行查阅，都是大同小异），这样子别人通过访问我们的域名即可看到我们的博客了<br> <a id="more"></a></p>
+<h5 id="1-注册GitHub账户与创建软件仓库"><a href="#1-注册GitHub账户与创建软件仓库" class="headerlink" title="1.注册GitHub账户与创建软件仓库"></a>1.注册GitHub账户与创建软件仓库</h5><p>  首先我们先去<a target="_blank" rel="noopener" href="https://github.com/">GitHub</a>官网注册,注册流程很简单我就不在这说明了<br>  主要有GitHub官网进不去的朋友，请找到电脑的host文件，文件一般在这这个路径<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Windows\System32\drivers\etc</span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/pasted-7.png" alt="upload successful"></p>
+<p>然后使用记事本打开，在文件的末尾添加一下信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"># GitHub520 Host Start</span><br><span class="line">185.199.108.154               github.githubassets.com</span><br><span class="line">199.232.68.133                camo.githubusercontent.com</span><br><span class="line">199.232.68.133                github.map.fastly.net</span><br><span class="line">199.232.69.194                github.global.ssl.fastly.net</span><br><span class="line">140.82.113.3                  gist.github.com</span><br><span class="line">185.199.108.153               github.io</span><br><span class="line">140.82.113.4                  github.com</span><br><span class="line">140.82.114.5                  api.github.com</span><br><span class="line">199.232.68.133                raw.githubusercontent.com</span><br><span class="line">199.232.68.133                user-images.githubusercontent.com</span><br><span class="line">199.232.68.133                favicons.githubusercontent.com</span><br><span class="line">199.232.68.133                avatars5.githubusercontent.com</span><br><span class="line">199.232.68.133                avatars4.githubusercontent.com</span><br><span class="line">199.232.68.133                avatars3.githubusercontent.com</span><br><span class="line">199.232.68.133                avatars2.githubusercontent.com</span><br><span class="line">199.232.68.133                avatars1.githubusercontent.com</span><br><span class="line">199.232.68.133                avatars0.githubusercontent.com</span><br><span class="line"># Star me GitHub url: https:&#x2F;&#x2F;github.com&#x2F;521xueweihan&#x2F;GitHub520</span><br><span class="line"># GitHub520 Host End</span><br></pre></td></tr></table></figure>
+<p>配置信息来源GitHub社区的<a target="_blank" rel="noopener" href="https://github.com/521xueweihan/GitHub520">GitHub520项目</a></p>
+<p>注册好后我们创建软件仓库，按照下图步骤</p>
+<p><img src="/images/pasted-19.png" alt="upload successful"></p>
+<p><img src="/images/pasted-20.png" alt="upload successful"></p>
+<p><img src="/images/pasted-21.png" alt="upload successful"><br>这样子我们的软件仓库就创建好了，待会我们的博客就是要部署到这个软件仓库中</p>
+<p><img src="/images/pasted-22.png" alt="upload successful"></p>
+<h5 id="2-配置SSH-key"><a href="#2-配置SSH-key" class="headerlink" title="2.配置SSH key"></a>2.配置SSH key</h5><p>在根目录下找到<code>~/.ssh</code>这个文件夹，没有的话自己创建一个，这个文件夹用于存储你的公钥和私钥的文件，紧接着利用Git Bash 进入 .ssh 文件夹，然后执行该命令，按三下回车即可<br><code>ssh-keygen -t rsa -C &quot;你的邮件地址</code><br><img src="/images/pasted-9.png" alt="upload successful"><br>执行完就会在你的.ssh文件夹下生成你的公钥私钥文件，我们需要用到的只有id_rsa.pub文件</p>
+<p><img src="/images/pasted-11.png" alt="upload successful"></p>
+<p>我们使用记事本打开id_ras.pub文件，复制所有内容，然后进入GitHub点击Settings</p>
+<p><img src="/images/pasted-12.png" alt="upload successful"></p>
+<p>再点击SSH and GPG keys</p>
+<p><img src="/images/pasted-13.png" alt="upload successful"></p>
+<p>点击New SSH key，在将你刚刚复制的公钥信息粘贴进去，标题随意，然后点击Add SSH key即可<br><img src="/images/pasted-14.png" alt="upload successful"><br><img src="/images/pasted-15.png" alt="upload successful"></p>
+<p>配置完再去Git Bash上验证一下，输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com # 邮箱是这个，不要改动</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>OK！这样就成功了！<br><img src="/images/pasted-16.png" alt="upload successful"></p>
+<p>接着我们来配置一下你的信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;liuxianan&quot;     &#x2F;&#x2F; 你的github用户名，非昵称</span><br><span class="line">git config --global user.email  &quot;xxx@qq.com&quot;  &#x2F;&#x2F; 填写你的github注册邮箱</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h5 id="3-配置-config-yum"><a href="#3-配置-config-yum" class="headerlink" title="3.配置_config.yum"></a>3.配置_config.yum</h5><p>这是最后一个配置项了，我们打开我们的blog文件夹，然后使用记事本打开_config.yum ，然后找到这个信息，并按照下图配置</p>
+<p><img src="/images/pasted-18.png" alt="upload successful"><br>仓库地址在哪儿？看下图</p>
+<p><img src="/images/pasted-23.png" alt="upload successful"></p>
+<h5 id="4-部署到GitHub"><a href="#4-部署到GitHub" class="headerlink" title="4.部署到GitHub"></a>4.部署到GitHub</h5><p>最后一步了是不是很激动呢！以上配置全部完成后，我们只需要在Git Bash（你要是用自带终端也行），进入blog文件夹，然后依次执行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo clean  #清理</span><br><span class="line">hexo g      #生成</span><br><span class="line">hexo d     #部署</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>部署完你就可以在网上看到你的博客了，你的博客地址呢，就是你的仓库名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">github用户名.github.io</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>这是我的博客，大家有兴趣可以看一下，我会持续更新的！<br><a target="_blank" rel="noopener" href="https://blocklin857.github.io/">https://blocklin857.github.io/</a><br><img src="/images/pasted-24.png" alt="upload successful"></p>
+<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p> 其实后面还有一些可以改动的地方，比如美化主题、hexo插件、自定义域名…<br> 这些我暂时还没研究透，又需要的请百度相关内容即可<br> 我也会继续学习，等研究的差不多了，就继续跟大家分享！<br> 感谢观看，有错误的、不足的、侵权的地方请联系我这是我的邮箱:<a href="mailto:&#50;&#57;&#x36;&#x30;&#51;&#x32;&#55;&#49;&#x31;&#x36;&#64;&#113;&#113;&#x2e;&#99;&#x6f;&#109;">&#50;&#57;&#x36;&#x30;&#51;&#x32;&#55;&#49;&#x31;&#x36;&#64;&#113;&#113;&#x2e;&#99;&#x6f;&#109;</a></p>
 
       
 
