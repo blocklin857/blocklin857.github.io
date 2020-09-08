@@ -20,8 +20,17 @@
 <meta property="og:image" content="http://yoursite.com/images/pasted-29.png">
 <meta property="og:image" content="http://yoursite.com/images/pasted-30.png">
 <meta property="og:image" content="http://yoursite.com/images/pasted-31.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-34.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-32.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-33.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-35.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-36.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-37.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-38.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-40.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-41.png">
 <meta property="article:published_time" content="2020-08-27T11:24:51.000Z">
-<meta property="article:modified_time" content="2020-08-28T08:17:43.898Z">
+<meta property="article:modified_time" content="2020-09-08T08:36:41.856Z">
 <meta property="article:author" content="焦头烂鹅">
 <meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
@@ -238,9 +247,152 @@
 
 <p>可变个数形参：<br>举例：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">public void getArr(String ... str)&#123;&#x2F;&#x2F;可使用数组的形式调用</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;两者意思是相同的所以不构成重载</span><br><span class="line">public void getArr(String [] str)&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>封装与隐藏</p>
-<p>在实际应用中，我们需要对一些属性进行限制，但是又无法在属性声明时进行限制条件的添加，于是引入封装，比如我们在声明一个属性后，我们不希望用户进行随意的修改，我们就可以将该属性封装为私有的（private）的，这样子用户只能通过我们的方法进行属性的修改，而方法中我们已经添加了对属性修改的限制条件，这样子避免用户任意修改属性且属性不合理导致程序出现错误</p>
-<p>封装性的体现：<br>    我们将类中的属性xxx私有化（private），同时提供公共的(public)方法来获取(getXxx)和设置(setXxx)属性的值</p>
+<h1 id="封装与隐藏"><a href="#封装与隐藏" class="headerlink" title="封装与隐藏"></a>封装与隐藏</h1><p>在实际应用中，我们需要对一些属性进行限制，但是又无法在属性声明时进行限制条件的添加，于是引入封装，比如我们在声明一个属性后，我们不希望用户进行随意的修改，我们就可以将该属性封装为私有的（private）的，这样子用户只能通过我们的方法进行属性的修改，而方法中我们已经添加了对属性修改的限制条件，这样子避免用户任意修改属性且属性不合理导致程序出现错误</p>
+<p>封装性的体现：<br>    我们将类中的属性xxx私有化（private），同时提供公共的(public)方法来获取(getXxx)和设置(setXxx)属性的值<br>    但是这个只是封装性的体现，并不等同于封装性！<br>    以下看实例： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">#实例</span><br><span class="line">public class listTest &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		&#x2F;&#x2F; TODO Auto-generated method stub</span><br><span class="line">		Test t1 &#x3D; new Test();</span><br><span class="line">		t1.age();&#x2F;&#x2F;我几岁了</span><br><span class="line">		t1.setI(8);&#x2F;&#x2F;更改岁数为8岁</span><br><span class="line">		System.out.println(&quot;我现在&quot;+t1.getI()+&quot;岁&quot;);&#x2F;&#x2F;获取此时我的岁数</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Test &#123;</span><br><span class="line">	private int i &#x3D; 5;</span><br><span class="line">	</span><br><span class="line">	public void age() &#123;</span><br><span class="line">		System.out.println(&quot;我已经&quot;+i+&quot;岁了&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	&#x2F;&#x2F;getI方法：获取I的值</span><br><span class="line">	public int getI() </span><br><span class="line">	&#123;</span><br><span class="line">		return i;</span><br><span class="line">	&#125;</span><br><span class="line">	&#x2F;&#x2F;setI方法：设置I的值</span><br><span class="line">	public void setI(int Is) &#123;</span><br><span class="line">		i &#x3D; Is;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>看完结合实例我们了解封装简而言之就是：暴露该暴露的，隐藏该隐藏的<br>隐藏了类内部的复杂性，对外公开简单的接口供用户操作<br>封装后可以提高我们的可拓展性和可维护性</p>
+<ul>
+<li><h5 id="四种权限修饰符"><a href="#四种权限修饰符" class="headerlink" title="四种权限修饰符"></a>四种权限修饰符</h5></li>
+</ul>
+<p><img src="/images/pasted-34.png" alt="upload successful"><br>封装性的体现需要权限修饰符来配合<br>1.有哪些权限修饰符呢？<br>从小到大排序：private、缺省(default)、proteced、public<br>2.这些权限修饰符的大小到底是怎么回事呢？其实就是就是限定对象对该类的访问权限<br>private:类内部<br>缺省：类内部、同一个包下<br>proteced:类内部、同一个包下、不同包的子类<br>public:类内部、同一个包下、不同包的子类、同一个工程<br>3.这四种权限可以用来修饰类及类的内部结构(属性、方法、构造器、内部类)<br>    修饰类，只能用：缺省、public</p>
+<ul>
+<li><h5 id="封装性总结"><a href="#封装性总结" class="headerlink" title="封装性总结"></a>封装性总结</h5>java提供了四种权限修饰符来修饰类及类的内部结构，体现了类及类的内部结构在被调用的可见性的大小</li>
+</ul>
+<h1 id="构造器"><a href="#构造器" class="headerlink" title="构造器"></a>构造器</h1><p>构造器（构造方法、constructor）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Person p1 &#x3D; new Person();</span><br><span class="line">#此处的Person（）就是一个构造器</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>构造器说明</li>
+</ul>
+<p>1.在定义的时候，如果没有显式的定义类的构造器，那么系统就会提供一个默认的空参构造器，但是一旦定义了构造器，系统则不再提供空参构造器<br>2.定义构造器的格式:权限修饰符 类名 （形参列表）{}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">public Person ()&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>3.不能有return语句返回值<br>4.可以定义多个构造器，彼此构成重载</p>
+<ul>
+<li>构造器的作用</li>
+</ul>
+<p>1.创建对象<br>2.给对象的属性进行初始化</p>
+<h1 id="属性赋值的先后顺序"><a href="#属性赋值的先后顺序" class="headerlink" title="属性赋值的先后顺序"></a>属性赋值的先后顺序</h1><ul>
+<li>默认初始化</li>
+<li>显式初始化</li>
+<li>构造器赋值</li>
+<li>通过”对象.方法”,”对象.属性”的方式赋值</li>
+</ul>
+<h1 id="JavaBean"><a href="#JavaBean" class="headerlink" title="JavaBean"></a>JavaBean</h1><p>所谓JavaBean就是一种Java语言写成的可重复使用的组件</p>
+<p>JavaBean是指符合一下标准的Java类：</p>
+<ul>
+<li><p>类是公共的</p>
+</li>
+<li><p>有一个无参的公共的构造器</p>
+</li>
+<li><p>有属性且有对应的set、get方法</p>
+</li>
+<li><h2 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h2><p>this关键字的使用：</p>
+</li>
+</ul>
+<p>1.可以用来修饰：属性、方法、构造器<br>2.this修饰方法和属性<br>    this可以理解为：当前对象或当前正在创建的对象<br>     3.在类的方法中，哦我们可以选择使用”this.方法”或”this.属性”的方式，调用当前对象的属性或者方法，但是我们通常都省略”this.”,如果构造方法的形参和类的属性重名了，那么我们就要显式的使用”this.变量”的方式，表明变量是属性而非形参<br>3.this调用构造器：可以在本类中使用”this(形参列表)”,来调用本类中的其他构造器，但是不能通过”this(形参列表)”的方式调用自己<br>4.”this(形参列表)”这一方式必须声明在当前构造器的首行</p>
+<h1 id="关键字使用——import、package"><a href="#关键字使用——import、package" class="headerlink" title="关键字使用——import、package"></a>关键字使用——import、package</h1><ul>
+<li><h2 id="package关键字"><a href="#package关键字" class="headerlink" title="package关键字"></a>package关键字</h2></li>
+</ul>
+<p>1.为了更好的去管理项目中类的管理，提供了类的概念<br>2.使用package声明类或者接口所属的包，声明在源文件首行<br>3.包，属于标识符，需要遵循标识符的命名规则、规范（xxxyyyzzz）、“见名知意”<br>4.每” . “一次就代表一层文件目录</p>
+<p>补充：同一个包下不能命名同名的接口、类</p>
+<p><img src="/images/pasted-32.png" alt="upload successful"></p>
+<p><img src="/images/pasted-33.png" alt="upload successful"></p>
+<ul>
+<li><h2 id="import关键字"><a href="#import关键字" class="headerlink" title="import关键字"></a>import关键字</h2></li>
+</ul>
+<p>1.在源文件中显式的使用import结构导入指定包下的类、接口<br>2.声明在package和类之间<br>3.导入多个则并列写出即可<br>4.使用 “ import xxx.* “ 则是导入xxx包下的所有结构，但是如果需要调用子包下的结构则需要另外导包<br>5.如果使用类或接口式java.lang包下定义的，则可以省略import<br>6.在源文件中如果需要导入不同包下的同名类，那么必须有一个类是以全类名的方式出现<br>7.import static：导入指定类或接口中的静态结构</p>
+<h1 id="面向对象特征二：继承性"><a href="#面向对象特征二：继承性" class="headerlink" title="面向对象特征二：继承性"></a>面向对象特征二：继承性</h1><h5 id="一、继承（extends）的优点"><a href="#一、继承（extends）的优点" class="headerlink" title="一、继承（extends）的优点"></a>一、继承（extends）的优点</h5><p>1.减少了代码的冗余，提高代码的复用性<br>2.便于功能扩展<br>3.为之后多态性的使用，提供了前提</p>
+<h5 id="二、继承性的格式"><a href="#二、继承性的格式" class="headerlink" title="二、继承性的格式"></a>二、继承性的格式</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class A extends B&#123;</span><br><span class="line">	&#x2F;&#x2F;A:子类、派生类</span><br><span class="line">    &#x2F;&#x2F;B：父类、超类、基类</span><br><span class="line">    &#x2F;&#x2F;子类继承父类后，子类就可以获取父类中声明的所有属性、方法</span><br><span class="line">    &#x2F;&#x2F;继承后可以继续在子类中声明自己特有的属性、方法:实现功能的拓展</span><br><span class="line">    &#x2F;&#x2F;特殊情况：父类中声明的private方法，子类也可以继承到，只是由于封装性的缘故，子类无法直接调用父类的私有属性、方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="三、继承性的规定"><a href="#三、继承性的规定" class="headerlink" title="三、继承性的规定"></a>三、继承性的规定</h5><p>1.一个类可以被多个子类继承<br>2.java中类的单继承性：一个类只能有一个父类<br>3.可以多层继承,子类直接继承的称为：直接父类；间接继承的称为：间接父类<br>4.子类可以获取到直接父类和所有间接父类的所有方法、属性<br>5.如果我们没有显式的定义一个类的父类，那么他就继承于java.lang.Object,也可以说所有的类（除了java.lang.Object以外）都继承于java.lang.Object类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class A&#123;</span><br><span class="line">	&#x2F;&#x2F;B的直接父类</span><br><span class="line">    &#x2F;&#x2F;C的间接父类</span><br><span class="line">    &#x2F;&#x2F;D的间接父类</span><br><span class="line">&#125;</span><br><span class="line">class B extends A&#123;</span><br><span class="line">	&#x2F;&#x2F;C的直接父类</span><br><span class="line">    &#x2F;&#x2F;D的间接父类</span><br><span class="line">&#125;</span><br><span class="line">class C extends B&#123;</span><br><span class="line">	&#x2F;&#x2F;D的直接父类</span><br><span class="line">&#125;</span><br><span class="line">class D extends C&#123;</span><br><span class="line">	....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>ps:快捷键：选中某个类，Ctrl+T 可以看到继承结构</p>
+<h5 id="四、子类对象实例化过程"><a href="#四、子类对象实例化过程" class="headerlink" title="四、子类对象实例化过程"></a>四、子类对象实例化过程</h5><ul>
+<li><h5 id="从结果看"><a href="#从结果看" class="headerlink" title="从结果看"></a>从结果看</h5></li>
+<li><p>子类继承父类后，就获取了父类中声明的属性和方法</p>
+</li>
+<li><p>创建子类子类对象时，就会加载父类中声明的属性</p>
+</li>
+<li><h5 id="从过程看"><a href="#从过程看" class="headerlink" title="从过程看"></a>从过程看</h5></li>
+<li><p>当我们通过子类构造器创建子类对象时，我们一定会直接或者间接的调用其父类构造器,进而调用父类的父类的构造器…以此类推，直至调用到java.lang.Object类。正因为加载过所有父类的结构，所以才能看到内存中有父类的结构，子类对象才可以考虑调用</p>
+<p>  注意：我们虽然在创建子类对象时，调用了父类的构造器，但是自始至终我们只new了一个对象，即new的子类对象</p>
+</li>
+</ul>
+<h1 id="方法的重写（Overrridee-Overwrite）"><a href="#方法的重写（Overrridee-Overwrite）" class="headerlink" title="方法的重写（Overrridee/Overwrite）"></a>方法的重写（Overrridee/Overwrite）</h1><p>1.子类继承父类之后，对父类的同名、同参数的方法进行覆盖<br>2.子类重写的方法的方法名和形参列表与父类的被重写的方法名和形参列表要一样<br>3.子类重写方法的权限不能小于父类被重写的权限<br>4.返回值类型：</p>
+<ul>
+<li>父类被重写的方法为void，则子类的方法也要相同；</li>
+<li>如果父类的被重新写方法为类型A，则子类重写的方法要是A或者A的子类</li>
+<li>如果父类的被重新写方法为基本数据类型，则类重写的方法要是相同的基本数据类型</li>
+<li>子类重写的方法抛出的异常类型不能大于父类被重写方法的异常类型<br>  //特殊情况：子类不能重写父类中private权限的方法<br>  //static方法是一定不能被重写的</li>
+</ul>
+<h1 id="Super关键字"><a href="#Super关键字" class="headerlink" title="Super关键字"></a>Super关键字</h1><ul>
+<li><p>super关键字相当于：父类的</p>
+</li>
+<li><h4 id="super-调用属性、方法"><a href="#super-调用属性、方法" class="headerlink" title="super 调用属性、方法"></a>super 调用属性、方法</h4></li>
+<li><p>当父类和子类中出现相同的属性、方法时，若我们需要在子类中调用父类中的同名方法、属性时，我们可以使用super显式的调用父类中的同名方法、属性</p>
+</li>
+<li><p>调用方法：super.属性、super.方法</p>
+</li>
+<li><h4 id="super-调用构造器"><a href="#super-调用构造器" class="headerlink" title="super 调用构造器"></a>super 调用构造器</h4></li>
+<li><p>我们可以在子类的构造器中显式的调用父类中的声明的指定构造器</p>
+</li>
+<li><p>调用方法：super（形参列表）</p>
+</li>
+<li><p>在子类构造器中 super（形参类表）的使用，必须声明在构造器的首行</p>
+</li>
+<li><p>在类的构造器中，针对于 “this(形参列表)” 和 “super(形参列表)” 的使用，只能二选一</p>
+</li>
+<li><p>当我们没有显式的声明 “this(形参列表)” 和 “super(形参列表)”时，则默认使用父类的空参构造器</p>
+</li>
+</ul>
+<h1 id="面向对象特征三：多态性（Ploymorphism）"><a href="#面向对象特征三：多态性（Ploymorphism）" class="headerlink" title="面向对象特征三：多态性（Ploymorphism）"></a>面向对象特征三：多态性（Ploymorphism）</h1><ul>
+<li><p>理解多态性：一个事物多种形态</p>
+</li>
+<li><p>对象的多态性：父类的引用指向子类的对象（子类的对象赋给父类引用）</p>
+</li>
+<li><p>多态的使用：对象有了多态性后，我们在编译期，只能调用父类中已经声明得到方法，但是在实际运行时，我们调用的是子类重写父类后的方法</p>
+</li>
+<li><p>对象的多态性：只适用于方法，不适用于属性（编译、运行都看左边 ）</p>
+<p>总结：编译看左，运行看右</p>
+</li>
+<li><p>多态使用前提：<br>  1.类的继承关系<br>  2.的方法的重写</p>
+</li>
+</ul>
+<p>代码示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">public class AnimalTest &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		AnimalTest A1 &#x3D; new AnimalTest();</span><br><span class="line">		A1.func(new Dog());</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	public void func(Animal animal) &#123;</span><br><span class="line">		animal.eat();</span><br><span class="line">		animal.shout();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">class Animal&#123;</span><br><span class="line">	public void eat() &#123;</span><br><span class="line">		System.out.println(&quot;吃饭&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	public void shout() &#123;</span><br><span class="line">		System.out.println(&quot;叫&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">class Dog extends Animal&#123;</span><br><span class="line">	public void eat() &#123;</span><br><span class="line">		System.out.println(&quot;吃狗粮&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	public void shout() &#123;</span><br><span class="line">		System.out.println(&quot;汪汪汪&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">class Cat extends Animal&#123;</span><br><span class="line">	public void eat() &#123;</span><br><span class="line">		System.out.println(&quot;吃鱼&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	public void shout() &#123;</span><br><span class="line">		System.out.println(&quot;喵喵喵&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">吃狗粮</span><br><span class="line">汪汪汪</span><br></pre></td></tr></table></figure>
+<p>重写和重载的区别</p>
+<p><img src="/images/pasted-35.png" alt="upload successful"></p>
+<h1 id="instanceof关键字"><a href="#instanceof关键字" class="headerlink" title="instanceof关键字"></a>instanceof关键字</h1><ul>
+<li>instanceof的使用：<br>  a instanceof A 判断对象a是否是类A的实例，是返回true,否返回false</li>
+<li>使用场景：为了避免在向下转型时出现ClassCastExcption的异常，在转型之前使用instanceof进行判断，返回true,则向下转型，返回false则不进行转型</li>
+</ul>
+<h1 id="补充："><a href="#补充：" class="headerlink" title="补充："></a>补充：</h1><ul>
+<li><h5 id="和-equals（）-的区别"><a href="#和-equals（）-的区别" class="headerlink" title="== 和 equals（） 的区别"></a>== 和 equals（） 的区别</h5>  == ：运算符<br>  1.可以使用在基本数据类型变量和引用数据类型变量<br>  2.如果比较基本数据类型变量则比较保存的数据是否相同；如果比较引用数据类型则比较数据存储的地址值，即两个引用是否指向同一个对象实体<br>  equals（）方法<br>  1.是一个方法而非运算符<br>  2.只能适用引用数据类型<br>  3.Object类中的定义和==的作用相同<br>  4.像String、Date、File、包装类等都重写了Object类的equals方法，重写后，比较的就不是两个引用地址是否相同，而是比较两个对象的实体内容是否相同    </li>
+<li><h5 id="重写equals"><a href="#重写equals" class="headerlink" title="重写equals"></a>重写equals</h5></li>
+</ul>
+<p><img src="/images/pasted-36.png" alt="upload successful"></p>
+<ul>
+<li><h5 id="equals重写原则"><a href="#equals重写原则" class="headerlink" title="equals重写原则"></a>equals重写原则</h5></li>
+</ul>
+<p><img src="/images/pasted-37.png" alt="upload successful"></p>
+<h1 id="toString-方法"><a href="#toString-方法" class="headerlink" title="toString()方法"></a>toString()方法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public String toString() &#123;</span><br><span class="line">        return getClass().getName() + &quot;@&quot; + Integer.toHexString(hashCode());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>1.当我们调用一个对象的的引用时，实际上就是调用了当前对象的toString()方法，<br>2.像String、file、Date、包装类都重写了toString()方法；是的在调用对象的toString()方法时，返回了”实体内容”。<br>3.重写toString()方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">	public String toString() &#123;</span><br><span class="line">		&#x2F;&#x2F; TODO Auto-generated method stub</span><br><span class="line">		return &quot;name &#x3D; [&quot;+name+&quot;],age&#x3D;[&quot;+age&quot;]&quot;;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="拓展：Junit单元测试"><a href="#拓展：Junit单元测试" class="headerlink" title="拓展：Junit单元测试"></a>拓展：Junit单元测试</h1><p>步骤如下：<br>1.右键工程 –&gt; Build path –&gt; AddLibraries –&gt;Junit –&gt; Junit5<br>–&gt;Finish</p>
+<p><img src="/images/pasted-38.png" alt="upload successful"></p>
+<p><img src="/images/pasted-40.png" alt="upload successful"></p>
+<p>2.创建一个类：<br>        * 这个类权限是public的<br>        * 提供一个空参构造器<br>3.在此类中声明单元测试方法<br>        * 权限是public<br>        * 没有返回值，没有形参<br>4.在测试方法上声明注解：@Test，并在单元测试类中导入：import.org.junit.Test<br>5.在以上步骤完成后就可以在方法中测试指定内容了<br>6.方法写好后，右键双击方法名 –&gt; Rua as –&gt; Junit Test</p>
+<p>ps:一个类中可以有多个单元测试了类</p>
+<h1 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h1><p><img src="/images/pasted-41.png" alt="upload successful"></p>
+<ul>
+<li><h6 id="基本数据类型、包装类、String之间的相互转换"><a href="#基本数据类型、包装类、String之间的相互转换" class="headerlink" title="基本数据类型、包装类、String之间的相互转换"></a>基本数据类型、包装类、String之间的相互转换</h6></li>
+<li>代码演示：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import org.junit.jupiter.api.Test;</span><br><span class="line"></span><br><span class="line">public class wrapperTest &#123;</span><br><span class="line">	&#x2F;&#x2F;基本数据类型 --&gt; 包装类:Integer(xxx)</span><br><span class="line">	@Test</span><br><span class="line">	public void test1() &#123;</span><br><span class="line">		int num1 &#x3D; 10;</span><br><span class="line">		Integer in1 &#x3D; new Integer(num1);</span><br><span class="line">		System.out.println(in1.toString());</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	&#x2F;&#x2F;包装类 --&gt; 基本数据类型</span><br><span class="line">	@Test</span><br><span class="line">	public void test2() &#123;</span><br><span class="line">		Integer in1 &#x3D; new Integer(12);</span><br><span class="line">		</span><br><span class="line">		int i1 &#x3D; in1.intValue();&#x2F;&#x2F;其他类型同理&quot; xx.xxxValue&quot;</span><br><span class="line">		System.out.println(i1);</span><br><span class="line">	&#125;</span><br><span class="line">	@Test</span><br><span class="line">	public void test3() &#123;</span><br><span class="line">		&#x2F;&#x2F;JDK5.0新特性：自动装箱&amp;自动拆箱</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;自动装箱:基本数据类型 --&gt; 包装类</span><br><span class="line">		int i1 &#x3D; 10;</span><br><span class="line">		Integer in1 &#x3D; i1;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		boolean b1 &#x3D; true;</span><br><span class="line">		Boolean bl1 &#x3D; b1;</span><br><span class="line">		&#x2F;&#x2F;自动拆箱:包装类 --&gt; 基本数据类型</span><br><span class="line">		boolean b2 &#x3D; bl1;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	@Test</span><br><span class="line">	public void test4() &#123;</span><br><span class="line">		&#x2F;&#x2F;基本数据类型,包装类 --&gt; String类型: String.valueOf(xxx);</span><br><span class="line">		int i &#x3D; 10;</span><br><span class="line">		Integer in1 &#x3D; i;</span><br><span class="line">		String s1 &#x3D; String.valueOf(in1);</span><br><span class="line">		String s2 &#x3D; String.valueOf(i);</span><br><span class="line">		System.out.println(s1+s2);</span><br><span class="line">	&#125;</span><br><span class="line">	@Test</span><br><span class="line">	public void test5() &#123;</span><br><span class="line">		&#x2F;&#x2F;String类型转为基本数据类型、包装类</span><br><span class="line">		String s1 &#x3D; &quot;123&quot;;</span><br><span class="line">		int i &#x3D; Integer.parseInt(s1);&#x2F;&#x2F; (包装类)Xxx.parseXxx(xxx);</span><br><span class="line">		System.out.println(i+1);</span><br><span class="line">		</span><br><span class="line">		String s2 &#x3D; &quot;true&quot;;</span><br><span class="line">		boolean b2 &#x3D; Boolean.parseBoolean(s2);</span><br><span class="line">		System.out.println(b2);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
 
       
 
@@ -383,7 +535,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#2020-08-27"><span class="toc-number">1.</span> <span class="toc-text">2020-08-27</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%88%E4%B8%8A%EF%BC%89"><span class="toc-number">1.0.0.0.0.1.</span> <span class="toc-text">面向对象（上）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E8%A1%8C%E5%8F%82%E7%9A%84%E4%BC%A0%E9%80%92%E6%9C%BA%E5%88%B6-%E5%80%BC%E4%BC%A0%E9%80%92"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">方法行参的传递机制:值传递</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%80%92%E5%BD%92"><span class="toc-number">1.0.0.1.1.</span> <span class="toc-text">递归</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#2020-08-27"><span class="toc-number">1.</span> <span class="toc-text">2020-08-27</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%88%E4%B8%8A%EF%BC%89"><span class="toc-number">1.0.0.0.0.1.</span> <span class="toc-text">面向对象（上）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E8%A1%8C%E5%8F%82%E7%9A%84%E4%BC%A0%E9%80%92%E6%9C%BA%E5%88%B6-%E5%80%BC%E4%BC%A0%E9%80%92"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">方法行参的传递机制:值传递</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%80%92%E5%BD%92"><span class="toc-number">1.0.0.1.1.</span> <span class="toc-text">递归</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B0%81%E8%A3%85%E4%B8%8E%E9%9A%90%E8%97%8F"><span class="toc-number">2.</span> <span class="toc-text">封装与隐藏</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9B%9B%E7%A7%8D%E6%9D%83%E9%99%90%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-number">2.0.0.0.1.</span> <span class="toc-text">四种权限修饰符</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B0%81%E8%A3%85%E6%80%A7%E6%80%BB%E7%BB%93"><span class="toc-number">2.0.0.0.2.</span> <span class="toc-text">封装性总结</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E5%99%A8"><span class="toc-number">3.</span> <span class="toc-text">构造器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E8%B5%8B%E5%80%BC%E7%9A%84%E5%85%88%E5%90%8E%E9%A1%BA%E5%BA%8F"><span class="toc-number">4.</span> <span class="toc-text">属性赋值的先后顺序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaBean"><span class="toc-number">5.</span> <span class="toc-text">JavaBean</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%93%E5%B1%95"><span class="toc-number">5.1.</span> <span class="toc-text">拓展</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97%E4%BD%BF%E7%94%A8%E2%80%94%E2%80%94import%E3%80%81package"><span class="toc-number">6.</span> <span class="toc-text">关键字使用——import、package</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#package%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">6.1.</span> <span class="toc-text">package关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#import%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">6.2.</span> <span class="toc-text">import关键字</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%89%B9%E5%BE%81%E4%BA%8C%EF%BC%9A%E7%BB%A7%E6%89%BF%E6%80%A7"><span class="toc-number">7.</span> <span class="toc-text">面向对象特征二：继承性</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%BB%A7%E6%89%BF%EF%BC%88extends%EF%BC%89%E7%9A%84%E4%BC%98%E7%82%B9"><span class="toc-number">7.0.0.0.1.</span> <span class="toc-text">一、继承（extends）的优点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%BB%A7%E6%89%BF%E6%80%A7%E7%9A%84%E6%A0%BC%E5%BC%8F"><span class="toc-number">7.0.0.0.2.</span> <span class="toc-text">二、继承性的格式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%BB%A7%E6%89%BF%E6%80%A7%E7%9A%84%E8%A7%84%E5%AE%9A"><span class="toc-number">7.0.0.0.3.</span> <span class="toc-text">三、继承性的规定</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%AD%90%E7%B1%BB%E5%AF%B9%E8%B1%A1%E5%AE%9E%E4%BE%8B%E5%8C%96%E8%BF%87%E7%A8%8B"><span class="toc-number">7.0.0.0.4.</span> <span class="toc-text">四、子类对象实例化过程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%8E%E7%BB%93%E6%9E%9C%E7%9C%8B"><span class="toc-number">7.0.0.0.5.</span> <span class="toc-text">从结果看</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%8E%E8%BF%87%E7%A8%8B%E7%9C%8B"><span class="toc-number">7.0.0.0.6.</span> <span class="toc-text">从过程看</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E5%86%99%EF%BC%88Overrridee-Overwrite%EF%BC%89"><span class="toc-number">8.</span> <span class="toc-text">方法的重写（Overrridee&#x2F;Overwrite）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Super%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">9.</span> <span class="toc-text">Super关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#super-%E8%B0%83%E7%94%A8%E5%B1%9E%E6%80%A7%E3%80%81%E6%96%B9%E6%B3%95"><span class="toc-number">9.0.0.1.</span> <span class="toc-text">super 调用属性、方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#super-%E8%B0%83%E7%94%A8%E6%9E%84%E9%80%A0%E5%99%A8"><span class="toc-number">9.0.0.2.</span> <span class="toc-text">super 调用构造器</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%89%B9%E5%BE%81%E4%B8%89%EF%BC%9A%E5%A4%9A%E6%80%81%E6%80%A7%EF%BC%88Ploymorphism%EF%BC%89"><span class="toc-number">10.</span> <span class="toc-text">面向对象特征三：多态性（Ploymorphism）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#instanceof%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">11.</span> <span class="toc-text">instanceof关键字</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%EF%BC%9A"><span class="toc-number">12.</span> <span class="toc-text">补充：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%92%8C-equals%EF%BC%88%EF%BC%89-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">12.0.0.0.1.</span> <span class="toc-text">&#x3D;&#x3D; 和 equals（） 的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%87%8D%E5%86%99equals"><span class="toc-number">12.0.0.0.2.</span> <span class="toc-text">重写equals</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#equals%E9%87%8D%E5%86%99%E5%8E%9F%E5%88%99"><span class="toc-number">12.0.0.0.3.</span> <span class="toc-text">equals重写原则</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#toString-%E6%96%B9%E6%B3%95"><span class="toc-number">13.</span> <span class="toc-text">toString()方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8B%93%E5%B1%95%EF%BC%9AJunit%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95"><span class="toc-number">14.</span> <span class="toc-text">拓展：Junit单元测试</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8C%85%E8%A3%85%E7%B1%BB"><span class="toc-number">15.</span> <span class="toc-text">包装类</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E3%80%81%E5%8C%85%E8%A3%85%E7%B1%BB%E3%80%81String%E4%B9%8B%E9%97%B4%E7%9A%84%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2"><span class="toc-number">15.0.0.0.0.1.</span> <span class="toc-text">基本数据类型、包装类、String之间的相互转换</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
